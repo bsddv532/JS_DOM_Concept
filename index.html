@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <h1>
+        <pre>"DOM understanding and manipulation
+    Accessing HTML element by tag, id, classname
+    Change innerText and innerHTML
+    Change styling , Create new HTML element"
+</pre>
+    </h1>
+    <hr>
+    <h2 class="heading">Accessing HTML element by tag, id, classname and change its styling</h2>
+
+    <h1>Welcome to Elevation Academy</h1>
+
+    <h2 class="ipl">Welcome to Elevation</h2>
+
+    <h3 id="ipl">Welcome Home</h3>
+    <button onclick="clickme()" id="btn">Click me</button>
+    <div class="Answers">
+        <pre>
+        <b>//element access by tagname</b>
+const element = document.getElementsByTagName("h1")
+console.log(element[0].innerText)
+
+
+<b>//element access by classname</b>
+const element1 = document.getElementsByClassName("ipl")
+console.log(element1[0].innerText)
+
+
+<b>//element access by id</b>
+const element2 = document.getElementById("ipl")
+console.log(element2.innerText)
+
+
+<b>//STYLING OF ELEMENTS AND CHANGE THE TEXT OF THAT ELEMENT ON BUTTON CLICK</b>
+function clickme(){
+    const text = document.getElementById("ipl")
+    text.innerText= "Hello Deepak"
+    text.style.color= "Blue"
+    // text.style.display= "None"
+    document.getElementById("btn").innerText="Thanks for Clicking"
+    
+}
+    </pre>
+    </div>
+
+
+
+
+    <hr>
+    <h2 class="heading">Difference between innerText and innerHTML</h2>
+
+    <h3>
+        innerText :- It will return all text contained by an element and all its child element.<br><br>
+
+        innerHTML :- It will return all text including html tags and that is contained by an element.
+    </h3>
+    <div id="task">
+        <h1>HELLO ELEVATION STUDENTS</h1>
+        <p>WELCOME</p>
+    </div>
+
+    <button onclick="InnerText()">innerText</button>
+    <button onclick="InnerHTML()">innerHTML</button>
+
+    <div class="Answers">
+        <pre>
+
+<b>//Difference between innerText and innerHTML </b>
+function InnerText(){
+    const demo = document.getElementById("task")
+    alert(demo.innerText)
+}
+
+function InnerHTML(){
+    const demo = document.getElementById("task")
+    alert(demo.innerHTML)
+}
+
+        </pre>
+    </div>
+
+
+    <hr>
+    <h2 class="heading">CREATION OF NEW HTML ELEMENT</h2>
+    <div id="extra"></div>
+    <button onclick="create()">Create</button>
+
+    <div class="Answers">
+        <pre>
+
+    <b>//creation of new element</b>
+        function create(){
+        const newtag = document.createElement("h1")
+        newtag.setAttribute("id","newtag")
+        newtag.innerText="Deepak"
+        console.log(newtag);
+
+    <b>//To show that new element On screen</b>
+        const parent = document.getElementById("extra")
+        parent.appendChild(newtag)
+
+            </pre>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
